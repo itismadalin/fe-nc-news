@@ -1,6 +1,14 @@
 .Header {
   text-align: left;
-  background-color: white
+  background-color: white;
+  border: 2px solid darkslategrey;
+  border-radius: 3px;
+  padding: 0.25em;
+  margin: 0.25em;
+}
+
+.MenuBotton {
+  text-align: right;
 }
 
 body {
@@ -9,6 +17,21 @@ body {
   color: #383838;
 }
 
-.menuButtons {
-  text-align: right;
+.ArticleCard {
+  border: 2px solid darkslategrey;
+  box-shadow: 3px 7px;
+  border-radius: 3px;
+  padding: 0.25em;
+  margin: 1em;
+  height: auto;
+  
+}
+
+.SingleArticlePage {
+  border: 2px solid darkslategrey;
+  box-shadow: 3px 7px;
+  border-radius: 3px;
+  padding: 0.25em;
+  margin: 1em;
+  height: auto;
 }
