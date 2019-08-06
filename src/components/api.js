@@ -6,3 +6,8 @@ export const fetchArticles = async query => {
     const { data } = await request.get('/articles', { params: query });
     return data.articles;
 }
+
+export const getSingleArticle = async article_id => {
+    const { data } = await request.get(`/articles/${article_id}`);
+    return data.article;
+}
