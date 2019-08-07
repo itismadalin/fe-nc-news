@@ -24,10 +24,18 @@ body {
   padding: 0.25em;
   margin: 1em;
   height: auto;
-  
 }
 
 .SingleArticlePage {
+  border: 2px solid darkslategrey;
+  box-shadow: 3px 7px;
+  border-radius: 3px;
+  padding: 0.25em;
+  margin: 1em;
+  height: auto;
+}
+
+.CommentCard {
   border: 2px solid darkslategrey;
   box-shadow: 3px 7px;
   border-radius: 3px;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
+import ArticleComments from './ArticleComments';
 
 class SingleArticlePage extends Component {
     state = {
@@ -18,6 +19,7 @@ class SingleArticlePage extends Component {
                         <h2>{article.title}</h2>
                         <p>{article.body}</p>
                         <p>Votes: {article.votes}</p>
+                        <ArticleComments article_id={this.state.article.article_id} />
                     </>
                 }
             </div>

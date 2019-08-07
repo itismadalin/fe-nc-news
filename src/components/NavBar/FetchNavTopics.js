@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-const fetchNavTopics = ({ topics }) => {
+const FetchNavTopics = ({ topics }) => {
     return (
         <>
             {topics.map(topic => {
@@ -14,4 +14,4 @@ const fetchNavTopics = ({ topics }) => {
     );
 }
 
-export default fetchNavTopics;
+export default FetchNavTopics;

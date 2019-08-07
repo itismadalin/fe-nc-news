@@ -6,7 +6,7 @@ const ArticleList = ({ articles }) => {
         <div>
             {articles.map(article => {
                 return (
-                    <div>
+                    <div key={article.title}>
                         <ArticleCard article={article} />
                     </div>
                 )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "@reach/router";
-import fetchNavTopics from './fetchNavTopics';
+// import FetchNavTopics from './FetchNavTopics';
 import * as api from '../api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 
@@ -12,15 +12,20 @@ class NavBar extends Component {
     }
 
     render() {
-        const { topics, isLoading, error } = this.state
+        const { isLoading, error } = this.state
         if (error) return <ErrorDisplay status={error.status} msg={error.msg} />
         return (
             <nav >
-                <Link to="/">Home</Link> | {}
-                <Link to="/articles">Articles</Link> | {}
-                <Link to="/topics/:topic">Topics</Link>
+
                 {isLoading ? <p>Loading Articles...</p> :
-                    <fetchNavTopics topics={topics} />}
+                    <>
+                        <Link to="/">Home</Link> | {}
+                        <Link to="/articles">Articles</Link> | {}
+                        <Link to="/topics/coding">Coding</Link> | {}
+                        <Link to="/topics/cooking">Cooking</Link> | {}
+                        <Link to="/topics/football">Football</Link>
+                    </>
+                }
             </nav>
         );
     }
