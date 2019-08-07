@@ -26,8 +26,14 @@ class ArticleListPage extends Component {
         this.getArticles();
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.topic !== this.props.topic) {
+            this.getArticles();
+        };
+    };
+
     getArticles = (query) => {
-        const queries = { ...query };
+        const queries = { topic: this.props.topic, ...query };
         api.fetchArticles(queries).then((articles) => {
             this.setState({ articles, isLoading: false });
         }).catch(({ response }) => {

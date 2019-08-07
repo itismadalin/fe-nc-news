@@ -11,3 +11,9 @@ export const getSingleArticle = async article_id => {
     const { data } = await request.get(`/articles/${article_id}`);
     return data.article;
 }
+
+export const getTopics = async () => {
+    const displayTopic = 'topics';
+    let { data: { topics } } = await request.get(displayTopic);
+    return topics;
+}
