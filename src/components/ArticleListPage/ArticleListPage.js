@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ArticleList from './ArticleList';
 import * as api from '../api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
-// import Sorter from '../Sorter/Sorter'
+import Sorter from '../Sorter/Sorter';
 
 class ArticleListPage extends Component {
     state = {
@@ -15,6 +15,7 @@ class ArticleListPage extends Component {
         return (
             <section>
                 <h2>Latest News</h2>
+                <Sorter fetchArticles={this.getArticles} />
                 {this.state.isLoading ? <p>Loading the news...</p> :
                     <ArticleList articles={this.state.articles} />
                 }

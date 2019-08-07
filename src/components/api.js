@@ -17,3 +17,4 @@ export const getTopics = async () => {
     let { data: { topics } } = await request.get(displayTopic);
     return topics;
 }
+
