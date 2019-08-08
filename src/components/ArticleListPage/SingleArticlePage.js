@@ -34,9 +34,11 @@ class SingleArticlePage extends Component {
         api.getSingleArticle(this.props.id)
             .then(article => {
                 this.setState({ article, isLoading: false });
-            }).catch(({ response }) => {
-                const error = { status: response.status, msg: response.data.msg }
-                this.setState({ error, isLoading: false })
+            })
+            .catch(({ response }) => {
+                // const error = { status: response.status, msg: response.data.msg }
+                // this.setState({ error, isLoading: false })
+                console.log(response)
             });
     };
 };

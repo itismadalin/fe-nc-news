@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentCard from './CommentCard';
-import * as api from "../../api";
+import * as api from '../Api/api';
 
 class ArticleComments extends Component {
     state = {
@@ -10,7 +10,7 @@ class ArticleComments extends Component {
     render() {
         return (
             <div>
-                {this.state.comments.map(comment => {
+                {!this.state.isLoading && this.state.comments.map(comment => {
                     return <CommentCard key={comment.comment_id} comment={comment} />
                 })}
             </div>
@@ -21,8 +21,8 @@ class ArticleComments extends Component {
         this.getComments();
     }
 
-    fetchComments = () => {
-        api.getComments(this.props.article_id).then(comments => {
+    getComments = () => {
+        api.fetchComments(this.props.article_id).then(comments => {
             this.setState({ comments, isLoading: false })
         });
     };
