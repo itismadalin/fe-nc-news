@@ -37,9 +37,30 @@ body {
 
 .CommentCard {
   border: 2px solid darkslategrey;
+  background-color: white;
   box-shadow: 3px 7px;
   border-radius: 3px;
   padding: 0.25em;
+  margin: 1em;
+  height: auto;
+}
+
+.NavBar {
+  border: 2px solid darkslategrey;
+  background-color: white;
+  box-shadow: 3px 7px;
+  border-radius: 3px;
+  padding: 1.5em;
+  margin: 1em;
+  height: auto;
+}
+
+.AddComment {
+  border: 2px solid darkslategrey;
+  background-color: white;
+  box-shadow: 3px 7px;
+  border-radius: 3px;
+  padding: 1.5em;
   margin: 1em;
   height: auto;
 }

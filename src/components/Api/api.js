@@ -25,3 +25,9 @@ export const fetchComments = async article_id => {
     return comments;
 
 }
+
+export const postComment = async ({ body, username, article_id }) => {
+    const postedComments = `articles/${article_id}/comments`;
+    let { data: { comment } } = await request.post(postedComments, { username, body });
+    return comment;
+};

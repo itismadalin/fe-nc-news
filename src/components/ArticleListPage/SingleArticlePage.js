@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as api from '../api';
+import * as api from '../Api/api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 import ArticleComments from './ArticleComments';
 
@@ -36,9 +36,8 @@ class SingleArticlePage extends Component {
                 this.setState({ article, isLoading: false });
             })
             .catch(({ response }) => {
-                // const error = { status: response.status, msg: response.data.msg }
-                // this.setState({ error, isLoading: false })
-                console.log(response)
+                const error = { status: response.status, msg: response.data.msg }
+                this.setState({ error, isLoading: false })
             });
     };
 };

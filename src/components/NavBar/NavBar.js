@@ -15,12 +15,12 @@ class NavBar extends Component {
         const { isLoading, error } = this.state
         if (error) return <ErrorDisplay status={error.status} msg={error.msg} />
         return (
-            <nav >
+            <nav className="NavBar">
 
                 {isLoading ? <p>Loading Articles...</p> :
                     <>
+                        {/* <Link to="/articles">Articles</Link> | {} */}
                         <Link to="/">Home</Link> | {}
-                        <Link to="/articles">Articles</Link> | {}
                         <Link to="/topics/coding">Coding</Link> | {}
                         <Link to="/topics/cooking">Cooking</Link> | {}
                         <Link to="/topics/football">Football</Link>
