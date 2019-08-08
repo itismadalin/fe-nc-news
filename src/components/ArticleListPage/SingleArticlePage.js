@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../Api/api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 import ArticleComments from './ArticleComments';
+import Voter from '../Voter/Voter';
 
 class SingleArticlePage extends Component {
     state = {
@@ -10,7 +11,7 @@ class SingleArticlePage extends Component {
         error: null
     }
     render() {
-        const { article, isLoading, error } = this.state;
+        const { id, article, isLoading, error } = this.state;
         if (error) return <ErrorDisplay status={error.status} msg={error.msg} />;
         return (
             <div className="SingleArticlePage">
@@ -18,7 +19,7 @@ class SingleArticlePage extends Component {
                     <>
                         <h2>{article.title}</h2>
                         <p>{article.body}</p>
-                        <p>Votes: {article.votes}</p>
+                        <Voter article_id={id} votes={article.votes} />
                         <ArticleComments article_id={this.state.article.article_id} />
                     </>
                 }

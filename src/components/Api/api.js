@@ -26,8 +26,23 @@ export const fetchComments = async article_id => {
 
 }
 
-export const postComment = async ({ body, username, article_id }) => {
+export const patchArticleVotes = async (article_id, increment) => {
+    const { data } = await request.patch(`/articles/${article_id}`, { inc_votes: increment });
+    return data.article;
+}
+
+export const updateVotes = async (article_id, comment_id, inc_votes) => {
+    const URL = article_id ? `articles/${article_id}` : `comments/${comment_id}`;
+    let { response } = await request.patch(URL, { inc_votes });
+    return response;
+};
+
+
+export const postComment = async ({ body, author, article_id }) => {
+    console.log(body, '<- body')
+    console.log(author, '<- author')
+    console.log(article_id, '<- article_id')
     const postedComments = `articles/${article_id}/comments`;
-    let { data: { comment } } = await request.post(postedComments, { username, body });
+    let { data: { comment } } = await request.post(postedComments, { author, body });
     return comment;
 };

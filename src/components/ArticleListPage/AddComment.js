@@ -10,10 +10,11 @@ class AddComment extends Component {
             <section className="AddComment">
                 <form className="AddComment" onSubmit={this.handleSubmit}>
                     <textarea
+                        rows="5"
+                        cols="60"
                         value={this.state.comment}
                         onChange={this.handleChange}
-                        placeholder="Post your thoughts..."
-                        name="comment"
+                        placeholder="Post your thoughts on this..."
                         required
                     />
                     <br></br>
@@ -31,7 +32,8 @@ class AddComment extends Component {
         api.postComment({ body: comment, article_id }).then(comment => {
             this.props.addComment(comment);
             this.setState({ comment: "" });
-        });
+        })
+            .catch(console.dir)
     };
 
     handleChange = ({ target: { value } }) => {
