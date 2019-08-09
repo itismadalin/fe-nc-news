@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import CommentCard from './CommentCard';
 import * as api from '../Api/api';
 import AddComment from './AddComment';
+import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 
 class ArticleComments extends Component {
     state = {
         comments: null,
         isLoading: true,
-        deleted: false
+        error: null
     }
     render() {
+        if (this.state.error) return <ErrorDisplay status={this.state.error.status} msg={this.state.error.msg} />;
         return (
             <div>
                 <AddComment article_id={this.props.article_id} onChange={this.getComments} AddComment={this.AddComment} />
@@ -26,7 +28,10 @@ class ArticleComments extends Component {
 
     getComments = () => {
         api.fetchComments(this.props.article_id).then(comments => {
-            this.setState({ comments, isLoading: false })
+            this.setState({ comments, isLoading: false });
+        }).catch(({ response }) => {
+            const error = { status: response.status, msg: response.data.msg }
+            this.setState({ error, isLoading: false })
         });
     };
 }

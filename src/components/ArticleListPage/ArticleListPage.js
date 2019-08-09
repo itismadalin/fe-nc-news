@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ArticleList from './ArticleList';
-import * as api from '../api';
+import * as api from '../Api/api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 import Sorter from '../Sorter/Sorter';
 

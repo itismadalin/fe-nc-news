@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import * as api from '../Api/api';
+import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 
 class AddComment extends Component {
     state = {
-        comment: ''
+        comment: '',
+        isLoading: true,
+        error: null
     }
     render() {
+        if (this.state.error) return <ErrorDisplay status={this.state.error.status} msg={this.state.error.msg} />;
         return (
             <section className="AddComment">
                 <form className="AddComment" onSubmit={this.handleSubmit}>
@@ -32,12 +36,15 @@ class AddComment extends Component {
         api.postComment({ body: comment, username: "jessjelly", article_id }).then(comment => {
             onChange();
             this.setState({ comment: "" });
-        })
+        }).catch(({ response }) => {
+            const error = { status: response.status, msg: response.data.msg }
+            this.setState({ error, isLoading: false })
+        });
     };
 
     handleChange = ({ target: { value } }) => {
         this.setState({ comment: value });
-    };
+    }
 }
 
 export default AddComment;

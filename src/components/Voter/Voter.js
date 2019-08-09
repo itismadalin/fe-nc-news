@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import * as api from '../Api/api';
+import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 
 
 class Voter extends Component {
     state = {
-        votes: this.props.votes
+        votes: this.props.votes,
+        error: null
     }
 
     render() {
+        if (this.state.error) return <ErrorDisplay status={this.state.error.status} msg={this.state.error.msg} />;
         return (
             <>
                 <button onClick={() => this.vote(1)}>LIKE</button>
@@ -25,8 +28,9 @@ class Voter extends Component {
                 .then(resp => {
                     this.setState({ votes: resp.votes });
                 })
-                .catch(err => {
-                    console.log(err);
+                .catch(({ response }) => {
+                    const error = { status: response.status, msg: response.data.msg }
+                    this.setState({ error, isLoading: false })
                 });
         } else if (comment_id) {
             api
@@ -34,8 +38,9 @@ class Voter extends Component {
                 .then(resp => {
                     this.setState({ votes: resp.votes });
                 })
-                .catch(err => {
-                    console.log(err);
+                .catch(({ response }) => {
+                    const error = { status: response.status, msg: response.data.msg }
+                    this.setState({ error, isLoading: false })
                 });
         }
 
