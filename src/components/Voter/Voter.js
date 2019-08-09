@@ -4,32 +4,42 @@ import * as api from '../Api/api';
 
 class Voter extends Component {
     state = {
-        votes: 0
+        votes: this.props.votes
     }
+
     render() {
-        const { votes } = this.props;
         return (
             <>
-                <button onClick={() => vote(1)}>LIKE</button>
-                <p>Votes:{votes}</p>
-                <button onClick={() => vote(-1)}>HATE</button>
+                <button onClick={() => this.vote(1)}>LIKE</button>
+                <button onClick={() => this.vote(-1)}>HATE</button>
+                <p>Votes:{this.state.votes}</p>
             </>
         );
     };
-};
-const vote = inc_votes => {
-    const { article_id } = this.props;
-    api
-        .patchArticleVotes(article_id, inc_votes)
-        .catch(err => {
-            this.setState(({ voteChange }) => ({
-                voteChange: voteChange - inc_votes
-            }));
-        });
-    this.setState(({ voteChange }) => ({
-        voteChange: voteChange + inc_votes
-    }));
 
+    vote(num) {
+        const { article_id, comment_id } = this.props;
+        if (article_id) {
+            api
+                .patchArticleVotes(article_id, num)
+                .then(resp => {
+                    this.setState({ votes: resp.votes });
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        } else if (comment_id) {
+            api
+                .patchCommentVotes(comment_id, num)
+                .then(resp => {
+                    this.setState({ votes: resp.votes });
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
+
+    };
 };
 
 export default Voter;

@@ -9,22 +9,19 @@ class Sorter extends Component {
     }
 
     render() {
-        const { sort_by } = this.state;
         return (
             <div>
-                <FilterButton sort_by={sort_by} ChangeForm={this.ChangeForm} />
+                <FilterButton sort_by={this.state.sort_by} ChangeForm={this.ChangeForm} />
                 <AscDesc ChangeForm={this.ChangeForm} />
             </div >
         );
     }
 
     ChangeForm = ({ target: { value, name } }) => {
-        this.setState(currentState => {
-            if (value) currentState.sort_by = value;
-            else currentState.order = name;
-            this.props.fetchArticles(currentState);
-            return currentState;
-        })
+        let sort_by = (value ? value : this.state.sort_by);
+        let order = (name ? name : this.state.order);
+        this.setState({ sort_by, order });
+        this.props.fetchArticles({ sort_by, order });
     }
 }
 

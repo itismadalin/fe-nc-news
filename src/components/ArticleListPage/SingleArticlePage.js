@@ -11,7 +11,7 @@ class SingleArticlePage extends Component {
         error: null
     }
     render() {
-        const { id, article, isLoading, error } = this.state;
+        const { article, isLoading, error } = this.state;
         if (error) return <ErrorDisplay status={error.status} msg={error.msg} />;
         return (
             <div className="SingleArticlePage">
@@ -19,7 +19,7 @@ class SingleArticlePage extends Component {
                     <>
                         <h2>{article.title}</h2>
                         <p>{article.body}</p>
-                        <Voter article_id={id} votes={article.votes} />
+                        <Voter article_id={this.state.article.article_id} votes={this.state.article.votes} />
                         <ArticleComments article_id={this.state.article.article_id} />
                     </>
                 }

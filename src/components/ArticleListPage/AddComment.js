@@ -27,13 +27,12 @@ class AddComment extends Component {
 
     handleSubmit = e => {
         const { comment } = this.state;
-        const { article_id } = this.props;
+        const { article_id, onChange } = this.props;
         e.preventDefault();
-        api.postComment({ body: comment, article_id }).then(comment => {
-            this.props.addComment(comment);
+        api.postComment({ body: comment, username: "jessjelly", article_id }).then(comment => {
+            onChange();
             this.setState({ comment: "" });
         })
-            .catch(console.dir)
     };
 
     handleChange = ({ target: { value } }) => {
