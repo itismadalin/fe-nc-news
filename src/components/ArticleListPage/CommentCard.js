@@ -2,7 +2,7 @@ import React from 'react';
 import Voter from '../Voter/Voter';
 import DeleteComment from '../ArticleListPage/DeleteComment';
 
-const CommentCard = ({ comment, comment_id, onChange }) => {
+const CommentCard = ({ comment, onChange }) => {
     return (
         <div className="CommentCard">
             <p>{comment.body}</p>
