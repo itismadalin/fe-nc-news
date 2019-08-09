@@ -13,8 +13,8 @@ class Voter extends Component {
         if (this.state.error) return <ErrorDisplay status={this.state.error.status} msg={this.state.error.msg} />;
         return (
             <>
-                <button onClick={() => this.vote(1)}>LIKE</button>
-                <button onClick={() => this.vote(-1)}>HATE</button>
+                <button className="MultipleButtons" onClick={() => this.vote(1)}>LIKE</button>
+                <button className="MultipleButtons" onClick={() => this.vote(-1)}>HATE</button>
                 <p>Votes:{this.state.votes}</p>
             </>
         );

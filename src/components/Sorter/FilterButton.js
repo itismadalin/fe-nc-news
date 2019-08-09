@@ -4,7 +4,7 @@ const FilterButton = ({ sort_by, ChangeForm }) => {
     return (
         <form>
             <label>
-                <select value={sort_by} onChange={ChangeForm}>
+                <select className="MultipleButtons" value={sort_by} onChange={ChangeForm}>
                     <option value="created_at">Date</option>
                     <option value="votes">Votes</option>
                     <option value="comment_count">Comments</option>

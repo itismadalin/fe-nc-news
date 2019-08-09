@@ -16,6 +16,7 @@ const DeleteComment = ({ comment_id, onChange }) => {
     return (
         <div>
             <button
+                className="MultipleButtons"
                 value={comment_id}
                 onClick={deleteComment}>Remove Comment</button>
         </div>

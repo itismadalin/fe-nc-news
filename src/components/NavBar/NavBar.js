@@ -18,13 +18,13 @@ class NavBar extends Component {
             <nav className="NavBar">
 
                 {isLoading ? <p>Loading Articles...</p> :
-                    <>
+                    <div>
                         {/* <Link to="/articles">Articles</Link> | {} */}
-                        <Link to="/">Home</Link> | {}
-                        <Link to="/topics/coding">Coding</Link> | {}
-                        <Link to="/topics/cooking">Cooking</Link> | {}
-                        <Link to="/topics/football">Football</Link>
-                    </>
+                        <Link className="NavBarLinkButtons" to="/">Home</Link>
+                        <Link className="NavBarLinkButtons" to="/topics/coding">Coding</Link>
+                        <Link className="NavBarLinkButtons" to="/topics/cooking">Cooking</Link>
+                        <Link className="NavBarLinkButtons" to="/topics/football">Football</Link>
+                    </div>
                 }
             </nav>
         );

@@ -14,8 +14,10 @@ class ArticleListPage extends Component {
         if (this.state.error) return <ErrorDisplay status={this.state.error.status} msg={this.state.error.msg} />;
         return (
             <section>
+                <div className="Sorter">
+                    <Sorter className="Sorter" fetchArticles={this.getArticles} />
+                </div>
                 <h2>Latest News</h2>
-                <Sorter fetchArticles={this.getArticles} />
                 {this.state.isLoading ? <p>Loading the news...</p> :
                     <ArticleList articles={this.state.articles} />
                 }

@@ -11,11 +11,10 @@ class AddComment extends Component {
     render() {
         if (this.state.error) return <ErrorDisplay status={this.state.error.status} msg={this.state.error.msg} />;
         return (
-            <section className="AddComment">
+            <section>
                 <form className="AddComment" onSubmit={this.handleSubmit}>
                     <textarea
-                        rows="5"
-                        cols="60"
+                        className="Textarea"
                         value={this.state.comment}
                         onChange={this.handleChange}
                         placeholder="Post your thoughts on this..."
@@ -23,7 +22,7 @@ class AddComment extends Component {
                     />
                     <br></br>
                     <br></br>
-                    <input type="submit" value="Add Comment" />
+                    <input className="MultipleButtons" type="submit" value="Add Comment" />
                 </form>
             </section>
         );
