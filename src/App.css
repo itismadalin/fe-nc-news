@@ -7,9 +7,9 @@
   margin: 0.25em;
 }
 
-/* .Sorter {
-  align-content: stretch;
-} */
+.Sorter {
+  justify-content: space-between;
+}
 
 .Textarea {
   width: 100%;
