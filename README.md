@@ -1,4 +1,4 @@
-#General information about NC NEWS
+# General information about NC NEWS
 
 Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of Reddit. 
 Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
@@ -11,7 +11,7 @@ Northcoders News has articles which are divided into topics. Each article has us
  `npm install react axios @reach/router` version "^1.2.1"
  `npm install axios` version "^0.19.0"
 
-#Installing
+# Installing
 
 After forking this repository, clone its contents to your local system by using the following terminal command:
 
@@ -19,7 +19,7 @@ After forking this repository, clone its contents to your local system by using 
 
 `npm run start`
 
-#Deployment
+# Deployment
 
 In order to prepare a production build of the project, simply run the following command:
 
@@ -27,15 +27,15 @@ In order to prepare a production build of the project, simply run the following 
 
 This build may then be deployed to your preferred host. If using Netlify, please ensure that the build folder is entered as the deploy path.
 
-###Deployed version:
+### Deployed version:
 
 The deployed website used here can be found at: https://get-nc-news.netlify.com
 
-###Back-end repo:
+### Back-end repo:
 
 The back-end repo can be found here: https://github.com/madalinmonaco/nc-news
 
-###API:
+### API:
 
 The API repo can be found here: https://madalin-nc-news.herokuapp.com/api/
 
