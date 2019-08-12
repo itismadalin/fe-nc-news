@@ -1,6 +1,7 @@
-# General information about NC NEWS
+# General Information
 
 Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of Reddit. 
+
 Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
 
 # Run it locally
@@ -8,7 +9,9 @@ Northcoders News has articles which are divided into topics. Each article has us
  To run this project locally you will need to install its dependencies as following:
 
  `react` version "^16.8.6"
+ 
  `npm install react axios @reach/router` version "^1.2.1"
+ 
  `npm install axios` version "^0.19.0"
 
 # Installing
