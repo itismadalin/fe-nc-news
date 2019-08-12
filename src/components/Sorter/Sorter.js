@@ -10,7 +10,7 @@ class Sorter extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Sorter">
                 <FilterButton sort_by={this.state.sort_by} ChangeForm={this.ChangeForm} />
                 <AscDesc ChangeForm={this.ChangeForm} />
             </div >

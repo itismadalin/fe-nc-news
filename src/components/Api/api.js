@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const request = axios.create({ baseURL: 'http://madalin-nc-news.herokuapp.com/api' });
+const request = axios.create({ baseURL: 'https://madalin-nc-news.herokuapp.com/api' });
 
 export const fetchArticles = async query => {
     const { data } = await request.get('/articles', { params: query });
