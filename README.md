@@ -8,9 +8,9 @@ Northcoders News has articles which are divided into topics. Each article has us
 
  To run this project locally you will need to install its dependencies as following:
 
- `react` version "^16.8.6"
+ `npm install react` version "^16.8.6"
  
- `npm install react axios @reach/router` version "^1.2.1"
+ `npm install @reach/router` version "^1.2.1"
  
  `npm install axios` version "^0.19.0"
 
