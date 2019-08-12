@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "@reach/router";
 // import FetchNavTopics from './FetchNavTopics';
-import * as api from '../api';
+import * as api from '../Api/api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 
 class NavBar extends Component {
