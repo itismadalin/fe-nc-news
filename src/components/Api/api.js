@@ -15,19 +15,19 @@ export const getSingleArticle = async article_id => {
 
 export const getTopics = async () => {
     const retrieveTopic = '/topics';
-    let { data: { topics } } = await request.get(retrieveTopic);
+    const { data: { topics } } = await request.get(retrieveTopic);
     return topics;
 }
 
 export const fetchComments = async article_id => {
     const retrieveComments = `articles/${article_id}/comments`;
-    let { data: { comments } } = await request.get(retrieveComments);
+    const { data: { comments } } = await request.get(retrieveComments);
     return comments;
 
 }
 
 export const deleteComment = async comment_id => {
-    let { response } = await request.delete(`/comments/${comment_id}`);
+    const { response } = await request.delete(`/comments/${comment_id}`);
     return response;
 };
 
@@ -37,13 +37,13 @@ export const patchArticleVotes = async (article_id, increment) => {
 }
 
 export const patchCommentVotes = async (comment_id, inc_votes) => {
-    let { data } = await request.patch(`/comments/${comment_id}`, { inc_votes });
+    const { data } = await request.patch(`/comments/${comment_id}`, { inc_votes });
     return data.comment;
 };
 
 
 export const postComment = async ({ body, username, article_id }) => {
     const postedComments = `articles/${article_id}/comments`;
-    let { data: { comment } } = await request.post(postedComments, { username, body });
+    const { data: { comment } } = await request.post(postedComments, { username, body });
     return comment;
 };
