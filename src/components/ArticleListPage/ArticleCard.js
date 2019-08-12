@@ -10,6 +10,7 @@ const ArticleCard = ({ article }) => {
             <p>Author: {article.author}</p>
             <p>Created: {date}</p>
             <p>Comments: {article.comment_count}</p>
+            <p>Votes: {article.votes}</p>
         </div>
     );
 };
