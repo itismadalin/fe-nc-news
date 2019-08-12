@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header'
 import { Router } from '@reach/router';
 import ArticleListPage from './components/ArticleListPage/ArticleListPage';
-import SingleArticlePage from './components/ArticleListPage/SingleArticlePage';
+import SingleArticlePage from './components/SingleArticlePage/SingleArticlePage';
 import ErrorDisplay from './components/ErrorDisplay/ErrorDisplay';
 import NavBar from './components/NavBar/NavBar';
 

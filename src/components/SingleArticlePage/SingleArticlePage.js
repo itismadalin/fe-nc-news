@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../Api/api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
-import ArticleComments from './ArticleComments';
+import ArticleComments from '../ArticleListPage/ArticleComments';
 import Voter from '../Voter/Voter';
 
 class SingleArticlePage extends Component {
