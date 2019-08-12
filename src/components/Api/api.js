@@ -14,7 +14,7 @@ export const getSingleArticle = async article_id => {
 }
 
 export const getTopics = async () => {
-    const retrieveTopic = 'topics';
+    const retrieveTopic = '/topics';
     let { data: { topics } } = await request.get(retrieveTopic);
     return topics;
 }
