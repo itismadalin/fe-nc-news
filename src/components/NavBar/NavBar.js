@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "@reach/router";
-// import FetchNavTopics from './FetchNavTopics';
 import * as api from '../Api/api';
 import ErrorDisplay from '../ErrorDisplay/ErrorDisplay';
 
@@ -19,7 +18,6 @@ class NavBar extends Component {
 
                 {isLoading ? <p>Loading Articles...</p> :
                     <div>
-                        {/* <Link to="/articles">Articles</Link> | {} */}
                         <Link className="NavBarLinkButtons" to="/">Home</Link>
                         <Link className="NavBarLinkButtons" to="/topics/coding">Coding</Link>
                         <Link className="NavBarLinkButtons" to="/topics/cooking">Cooking</Link>

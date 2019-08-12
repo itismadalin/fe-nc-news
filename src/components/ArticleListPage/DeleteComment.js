@@ -8,9 +8,6 @@ const DeleteComment = ({ comment_id, onChange }) => {
             .then(response => {
                 onChange();
             })
-            .catch(err => {
-                console.log(err);
-            });
     }
 
     return (
