@@ -14,7 +14,7 @@ Northcoders News has articles which are divided into topics. Each article has us
  
  `npm install axios` version "^0.19.0"
 
-# Installing
+# Installation
 
 After forking this repository, clone its contents to your local system by using the following terminal command:
 
