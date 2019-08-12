@@ -17,8 +17,8 @@
   color: black;
   border: 2px solid rgb(46, 46, 46);
   border-radius: 10px;
-  padding: 0.90em;
-  margin: 0.90em;
+  padding: 0.9em;
+  margin: 0.9em;
   display: inline-block;
 }
 
@@ -27,16 +27,15 @@
   color: black;
   border: 2px solid rgb(46, 46, 46);
   border-radius: 10px;
-  padding: 0.90em;
-  margin: 0.90em;
-  
+  padding: 0.9em;
+  margin: 0.9em;
 }
 
 body {
   text-align: center;
   background-color: rgba(241, 244, 247, 0.979);
   color: #383838;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   background-image: url("https://www.brandmarketmedia.com/wp-content/uploads/2017/06/matrix-blue-binary-background-15pct.jpg");
 }
 

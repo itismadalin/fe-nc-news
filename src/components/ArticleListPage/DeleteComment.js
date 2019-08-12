@@ -1,23 +1,24 @@
-import React from 'react';
-import * as api from '../Api/api';
+import React from "react";
+import * as api from "../../api";
 
 const DeleteComment = ({ comment_id, onChange }) => {
+  const deleteComment = () => {
+    api.deleteComment(comment_id).then(response => {
+      onChange();
+    });
+  };
 
-    const deleteComment = () => {
-        api.deleteComment(comment_id)
-            .then(response => {
-                onChange();
-            })
-    }
-
-    return (
-        <div>
-            <button
-                className="MultipleButtons"
-                value={comment_id}
-                onClick={deleteComment}>Remove Comment</button>
-        </div>
-    );
-}
+  return (
+    <div>
+      <button
+        className="MultipleButtons"
+        value={comment_id}
+        onClick={deleteComment}
+      >
+        Remove Comment
+      </button>
+    </div>
+  );
+};
 
 export default DeleteComment;
