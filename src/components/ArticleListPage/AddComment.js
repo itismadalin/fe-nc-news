@@ -40,10 +40,10 @@ class AddComment extends Component {
 
   handleSubmit = e => {
     const { comment } = this.state;
-    const { article_id, onChange } = this.props;
+    const { article_id, username, onChange } = this.props;
     e.preventDefault();
     api
-      .postComment({ body: comment, username: "jessjelly", article_id })
+      .postComment({ body: comment, username: username, article_id })
       .then(comment => {
         onChange();
         this.setState({ comment: "" });

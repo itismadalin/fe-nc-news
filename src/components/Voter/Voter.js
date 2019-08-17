@@ -5,7 +5,9 @@ import ErrorDisplay from "../ErrorDisplay/ErrorDisplay";
 class Voter extends Component {
   state = {
     votes: this.props.votes,
-    error: null
+    error: null,
+    liked: false,
+    hated: false
   };
 
   render() {
@@ -18,10 +20,26 @@ class Voter extends Component {
       );
     return (
       <>
-        <button className="MultipleButtons" onClick={() => this.vote(1)}>
+        <button
+          className="MultipleButtons"
+          onClick={() => {
+            if (this.state.hated) this.vote(2);
+            else this.vote(1);
+            this.setState({ liked: true, hated: false });
+          }}
+          disabled={this.state.liked}
+        >
           LIKE
         </button>
-        <button className="MultipleButtons" onClick={() => this.vote(-1)}>
+        <button
+          className="MultipleButtons"
+          onClick={() => {
+            if (this.state.liked) this.vote(-2);
+            else this.vote(-1);
+            this.setState({ hated: true, liked: false });
+          }}
+          disabled={this.state.hated}
+        >
           HATE
         </button>
         <p>Votes:{this.state.votes}</p>

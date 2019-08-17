@@ -1,7 +1,7 @@
 import React from "react";
 import * as api from "../../api";
 
-const DeleteComment = ({ comment_id, onChange }) => {
+const DeleteComment = ({ comment_id, disabled, onChange }) => {
   const deleteComment = () => {
     api.deleteComment(comment_id).then(response => {
       onChange();
@@ -12,6 +12,7 @@ const DeleteComment = ({ comment_id, onChange }) => {
     <div>
       <button
         className="MultipleButtons"
+        disabled={disabled}
         value={comment_id}
         onClick={deleteComment}
       >

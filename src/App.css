@@ -31,6 +31,13 @@
   margin: 0.9em;
 }
 
+.MultipleButtons:disabled,
+.MultipleButtons[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 body {
   text-align: center;
   background-color: rgba(241, 244, 247, 0.979);

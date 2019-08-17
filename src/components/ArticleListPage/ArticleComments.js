@@ -8,7 +8,8 @@ class ArticleComments extends Component {
   state = {
     comments: null,
     isLoading: true,
-    error: null
+    error: null,
+    username: "jessjelly"
   };
   render() {
     if (this.state.error)
@@ -22,6 +23,7 @@ class ArticleComments extends Component {
       <div>
         <AddComment
           article_id={this.props.article_id}
+          username={this.state.username}
           onChange={this.getComments}
           AddComment={this.AddComment}
         />
@@ -31,6 +33,7 @@ class ArticleComments extends Component {
               <CommentCard
                 key={comment.comment_id}
                 comment={comment}
+                username={this.state.username}
                 onChange={this.getComments}
               />
             );
